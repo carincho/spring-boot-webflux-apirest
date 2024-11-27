@@ -39,8 +39,9 @@ public class SpringBootWebfluxApirestApplication  implements CommandLineRunner{
 		Categoria deporte = new Categoria("Deporte");
 		Categoria computacion = new Categoria("Computacion");
 		Categoria muebles = new Categoria("Muebles");
+		Categoria tecnologia = new Categoria("Tecnologia");
 		
-		Flux.just(electronico, deporte, computacion, muebles)
+		Flux.just(electronico, deporte, computacion, muebles, tecnologia)
 		.flatMap(service::saveCategoria)
 		.doOnNext(c -> {
 			
